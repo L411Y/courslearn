@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1024395050186",
+    "project_id": "learnapp-d4c28",
+    "storage_bucket": "learnapp-d4c28.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024395050186:android:6a4ae1d7c22d58329ec833",
+        "android_client_info": {
+          "package_name": "com.example.courslearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEGVndL7qXx28nWQVxDGYY2FPsjObapgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024395050186:android:0f5637080eb9be739ec833",
+        "android_client_info": {
+          "package_name": "om.example.courslearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEGVndL7qXx28nWQVxDGYY2FPsjObapgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
