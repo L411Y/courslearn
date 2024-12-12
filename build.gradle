@@ -9,6 +9,9 @@ buildscript {
     dependencies {
         classpath 'com.google.gms:google-services:4.4.2'
         classpath 'com.android.tools.build:gradle:8.5.2'
+        classpath('com.android.settings:com.android.settings.gradle.plugin:8.5.2')
+        classpath('com.android.application:com.android.application.gradle.plugin:8.5.2')
+        classpath('com.android.library:com.android.library.gradle.plugin:8.5.2')
     }
 }
 
@@ -16,5 +19,7 @@ plugins {
     id 'com.google.gms.google-services' version '4.4.2' apply false
     alias(libs.plugins.android.application) apply false
 //    classpath 'com.google.gms:google-services:4.4.2'
+//    id 'com.android.application' version '8.5.2' apply false
+//    id 'com.android.libary' version '8.5.2' apply false
 }
 
