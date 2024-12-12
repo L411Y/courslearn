@@ -44,9 +44,9 @@ public class RegisterActivity extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "Чето было но хз" , Toast.LENGTH_SHORT ).show();
 
                             if (task.isSuccessful()){
-                             // Toast.makeText(getApplicationContext(), "Чето было но хз" , Toast.LENGTH_SHORT ).show();
+                                // Toast.makeText(getApplicationContext(), "Чето было но хз" , Toast.LENGTH_SHORT ).show();
 
-                            HashMap<String, String> userInfo = new HashMap<>();
+                                HashMap<String, String> userInfo = new HashMap<>();
                                 userInfo.put("Электронная почта", binding.mail.getText().toString());
                                 userInfo.put("ФИО", binding.name.getText().toString());
                                 userInfo.put("Группа", binding.mail.getText().toString());
@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             }else{
 
-                               // FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                // FirebaseAuth.getInstance().getCurrentUser().getUid();
                                 Toast.makeText(getApplicationContext(),"Ошибка какаята",Toast.LENGTH_SHORT).show();
                             }
                         }
