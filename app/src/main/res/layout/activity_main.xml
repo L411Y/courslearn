@@ -57,54 +57,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/test5"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginBottom="208dp"
-        android:backgroundTint="@color/blue"
-        android:text="Перейти к тесту"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/test6"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginBottom="208dp"
-        android:backgroundTint="@color/blue"
-        android:text="Перейти к тесту"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/test7"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginBottom="208dp"
-        android:backgroundTint="@color/blue"
-        android:text="Перейти к тесту"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/test8"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginBottom="208dp"
-        android:backgroundTint="@color/blue"
-        android:text="Перейти к тесту"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/backToLess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -124,6 +76,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -160,34 +113,6 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/blue"
                 android:text="Лекция 4" />
-
-            <Button
-                android:id="@+id/less5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue"
-                android:text="Лекция 5" />
-
-            <Button
-                android:id="@+id/less6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue"
-                android:text="Лекция 6" />
-
-            <Button
-                android:id="@+id/less7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue"
-                android:text="Лекция 7" />
-
-            <Button
-                android:id="@+id/less8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue"
-                android:text="Лекция 8" />
 
         </LinearLayout>
     </ScrollView>

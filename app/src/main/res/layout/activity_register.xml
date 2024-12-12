@@ -10,6 +10,7 @@
     >
 
     <ImageView
+        android:layout_marginStart="20dp"
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,51 +23,43 @@
 
     <EditText
         android:id="@+id/mail"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="16dp"
         android:hint="Электронная почта"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintBottom_toTopOf="@+id/regBttn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.01" />
 
     <EditText
         android:id="@+id/Group"
-        android:layout_width="80dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
 
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
         android:hint="Группа"
-        app:layout_constraintBottom_toTopOf="@+id/pass"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintBottom_toTopOf="@+id/regBttn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name"
-        app:layout_constraintVertical_bias="0.645" />
-
-    <EditText
-        android:id="@+id/pass"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:hint="Пароль"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
         android:hint="Логин:ФИО"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/regBttn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mail" />
+        app:layout_constraintTop_toBottomOf="@+id/mail"
+        app:layout_constraintVertical_bias="0.007" />
 
     <Button
+        android:backgroundTint="@color/blue"
         android:id="@+id/regBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,4 +68,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/regBttn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Group"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

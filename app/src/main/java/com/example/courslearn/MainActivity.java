@@ -35,188 +35,28 @@ private ActivityMainBinding binding;
         binding.less1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.ExitBttn.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.GONE);
-                binding.less2.setVisibility(View.GONE);
-                binding.less3.setVisibility(View.GONE);
-                binding.less4.setVisibility(View.GONE);
-                binding.less5.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less8.setVisibility(View.GONE);
-                binding.test1.setVisibility(View.VISIBLE);
-                binding.backToLess.setVisibility(View.VISIBLE);
-
-                //startActivity(new Intent(MainActivity.this,Lessons.class));
+                startActivity(new Intent(MainActivity.this,Less1.class));
             }
         });
         binding.less2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.ExitBttn.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.GONE);
-                binding.less2.setVisibility(View.GONE);
-                binding.less3.setVisibility(View.GONE);
-                binding.less4.setVisibility(View.GONE);
-                binding.less5.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less8.setVisibility(View.GONE);
-                binding.test2.setVisibility(View.VISIBLE);
-                binding.backToLess.setVisibility(View.VISIBLE);
-
-                //startActivity(new Intent(MainActivity.this,Lessons.class));
+                startActivity(new Intent(MainActivity.this, Less2.class));
             }
         });
         binding.less3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.ExitBttn.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.GONE);
-                binding.less2.setVisibility(View.GONE);
-                binding.less3.setVisibility(View.GONE);
-                binding.less4.setVisibility(View.GONE);
-                binding.less5.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less8.setVisibility(View.GONE);
-                binding.test3.setVisibility(View.VISIBLE);
-                binding.backToLess.setVisibility(View.VISIBLE);
-
-                //startActivity(new Intent(MainActivity.this,Lessons.class));
+                startActivity(new Intent(MainActivity.this, Less3.class));
             }
         });
         binding.less4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.ExitBttn.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.GONE);
-                binding.less2.setVisibility(View.GONE);
-                binding.less3.setVisibility(View.GONE);
-                binding.less4.setVisibility(View.GONE);
-                binding.less5.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less8.setVisibility(View.GONE);
-                binding.test4.setVisibility(View.VISIBLE);
-                binding.backToLess.setVisibility(View.VISIBLE);
+                startActivity(new Intent(MainActivity.this, Less4.class));
+            }
+        });
 
-                //startActivity(new Intent(MainActivity.this,Lessons.class));
-            }
-        });
-        binding.less5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.ExitBttn.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.GONE);
-                binding.less2.setVisibility(View.GONE);
-                binding.less3.setVisibility(View.GONE);
-                binding.less4.setVisibility(View.GONE);
-                binding.less5.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less8.setVisibility(View.GONE);
-                binding.test5.setVisibility(View.VISIBLE);
-                binding.backToLess.setVisibility(View.VISIBLE);
-
-                //startActivity(new Intent(MainActivity.this,Lessons.class));
-            }
-        });
-        binding.less6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.ExitBttn.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.GONE);
-                binding.less2.setVisibility(View.GONE);
-                binding.less3.setVisibility(View.GONE);
-                binding.less4.setVisibility(View.GONE);
-                binding.less5.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less8.setVisibility(View.GONE);
-                binding.test6.setVisibility(View.VISIBLE);
-                binding.backToLess.setVisibility(View.VISIBLE);
-
-                //startActivity(new Intent(MainActivity.this,Lessons.class));
-            }
-        });
-        binding.less7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.ExitBttn.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.GONE);
-                binding.less2.setVisibility(View.GONE);
-                binding.less3.setVisibility(View.GONE);
-                binding.less4.setVisibility(View.GONE);
-                binding.less5.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less8.setVisibility(View.GONE);
-                binding.test7.setVisibility(View.VISIBLE);
-                binding.backToLess.setVisibility(View.VISIBLE);
-
-                //startActivity(new Intent(MainActivity.this,Lessons.class));
-            }
-        });
-        binding.less8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.ExitBttn.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.GONE);
-                binding.less2.setVisibility(View.GONE);
-                binding.less3.setVisibility(View.GONE);
-                binding.less4.setVisibility(View.GONE);
-                binding.less5.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less6.setVisibility(View.GONE);
-                binding.less7.setVisibility(View.GONE);
-                binding.less8.setVisibility(View.GONE);
-                binding.test8.setVisibility(View.VISIBLE);
-                binding.backToLess.setVisibility(View.VISIBLE);
-
-                //startActivity(new Intent(MainActivity.this,Lessons.class));
-            }
-        });
-        binding.backToLess.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.backToLess.setVisibility(View.GONE);
-                binding.test1.setVisibility(View.GONE);
-                binding.test2.setVisibility(View.GONE);
-                binding.test3.setVisibility(View.GONE);
-                binding.test4.setVisibility(View.GONE);
-                binding.test5.setVisibility(View.GONE);
-                binding.test6.setVisibility(View.GONE);
-                binding.test7.setVisibility(View.GONE);
-                binding.test8.setVisibility(View.GONE);
-                binding.less1.setVisibility(View.VISIBLE);
-                binding.less2.setVisibility(View.VISIBLE);
-                binding.less3.setVisibility(View.VISIBLE);
-                binding.less4.setVisibility(View.VISIBLE);
-                binding.less5.setVisibility(View.VISIBLE);
-                binding.less6.setVisibility(View.VISIBLE);
-                binding.less7.setVisibility(View.VISIBLE);
-                binding.less6.setVisibility(View.VISIBLE);
-                binding.less7.setVisibility(View.VISIBLE);
-                binding.less8.setVisibility(View.VISIBLE);
-                binding.ExitBttn.setVisibility(View.VISIBLE);
-            }
-        });
 
 
 

@@ -15,6 +15,18 @@
         android:theme="@style/Theme.Courslearn"
         tools:targetApi="31">
         <activity
+            android:name=".Less4"
+            android:exported="false" />
+        <activity
+            android:name=".Less3"
+            android:exported="false" />
+        <activity
+            android:name=".Less2"
+            android:exported="false" />
+        <activity
+            android:name=".Less1"
+            android:exported="false" />
+        <activity
             android:name=".Lessons"
             android:exported="false" />
         <activity
