@@ -2,6 +2,8 @@ package com.example.courslearn;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
@@ -15,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.ktx.Firebase;
 
@@ -44,28 +47,47 @@ public class RegisterActivity extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "Чето было но хз" , Toast.LENGTH_SHORT ).show();
 
                             if (task.isSuccessful()){
-                                // Toast.makeText(getApplicationContext(), "Чето было но хз" , Toast.LENGTH_SHORT ).show();
+                                String user = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                if(user!=null){
+                                    // String userId = user.getUid();
+                                    HashMap<String, String> userInfo = new HashMap<>();
+                                    userInfo.put("mail", binding.mail.getText().toString());
+                                    userInfo.put("login", binding.name.getText().toString());
+                                    userInfo.put("group", binding.mail.getText().toString());
+                                    FirebaseDatabase.getInstance().getReference().child("users").child(user).setValue(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()){
+                                                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                            }
+                                            else{
+                                                Toast.makeText(getApplicationContext(), "Ошибка при сохранении данных", Toast.LENGTH_SHORT).show();
 
-                                HashMap<String, String> userInfo = new HashMap<>();
-                                userInfo.put("Электронная почта", binding.mail.getText().toString());
-                                userInfo.put("ФИО", binding.name.getText().toString());
-                                userInfo.put("Группа", binding.mail.getText().toString());
-                                FirebaseDatabase.getInstance().getReference().child("Пользователи").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userInfo);
+                                            }
+                                        }
+                                    });
 
-                                //    Toast.makeText(getApplicationContext(),":tttt",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-
+//                                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                }
+                                else {
+                                    Log.d("Ошибка аутентификации","Ошибка аутентификации");
+                                    Toast.makeText(getApplicationContext(), "Ошибка аутентификации", Toast.LENGTH_SHORT).show();
+                                }
                             }else{
-
-                                // FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                Toast.makeText(getApplicationContext(),"Ошибка какаята",Toast.LENGTH_SHORT).show();
-                            }
+                                Log.d("Ошибка регистрации","Ошибка регистрации");
+                                Toast.makeText(getApplicationContext(), "Ошибка регистрации: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();}
                         }
                     });
-
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0,0,0,"Лекция 1");
+        menu.add(0,1,1 ,"Лекция 2");
+        return super.onCreateOptionsMenu(menu);
 
     }
 }
