@@ -30,9 +30,6 @@
             android:name=".Less1"
             android:exported="false" />
         <activity
-            android:name=".Lessons"
-            android:exported="false" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity

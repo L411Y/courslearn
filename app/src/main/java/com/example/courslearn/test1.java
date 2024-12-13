@@ -1,70 +1,117 @@
 package com.example.courslearn;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.AlertDialog;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+public class test1 extends AppCompatActivity implements View.OnClickListener{
 
-import com.example.courslearn.databinding.ActivityTest1Binding;
+    TextView totalQuestionsTextView;
+    TextView questionTextView;
+    Button ansA, ansB, ansC, ansD;
+    Button submitBtn;
 
-public class test1 extends AppCompatActivity {
-    private Handler handler = new Handler();
-    private int index = 0;
+    int score=0;
+    int totalQuestion = QuestionAnswer.question.length;
+    int currentQuestionIndex = 0;
+    String selectedAnswer = "";
 
-    private static final long DELAY = 10;
-    private TextView textView1;
-    private TextView textView2;
-    private String textParts1 ="Что такое алгоритм?";
-    private String textParts2 ="Это четко определенная последовательность действий, предназначенная для решения конкретной задачи.";
-
-    private String textParts3 ="Что такое алгоритм?";
-
-    private String textParts4 ="Что такое алгоритм?";
-
-    private int currentIndex = 0;
-    private ActivityTest1Binding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        binding = ActivityTest1Binding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_test1);
+
+        totalQuestionsTextView = findViewById(R.id.total_question);
+        questionTextView = findViewById(R.id.questionText);
+        ansA = findViewById(R.id.ans_A);
+        ansB = findViewById(R.id.ans_B);
+        ansC = findViewById(R.id.ans_C);
+        ansD = findViewById(R.id.ans_D);
+        submitBtn = findViewById(R.id.submit_btn);
+
+        ansA.setOnClickListener(this);
+        ansB.setOnClickListener(this);
+        ansC.setOnClickListener(this);
+        ansD.setOnClickListener(this);
+        submitBtn.setOnClickListener(this);
+
+        totalQuestionsTextView.setText("Всего вопросов: "+totalQuestion);
+
+        loadNewQuestion();
 
 
 
-
-
-
-
-
-        textView1 = binding.textView2;  // Исправлено имя переменной
-        textView2 = binding.option1;
-        displayText();
-
-        // Установка отступов для системных панелей
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
     }
-    private void displayText() {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (index < textParts1.length()) {
-                    textView1.append(String.valueOf(textParts1.charAt(index)));
-                    textView2.append(String.valueOf(textParts2.charAt(index)));
-                    index++;
-                    handler.postDelayed(this, DELAY);
-                }
+
+    @Override
+    public void onClick(View view) {
+
+        ansA.setBackgroundColor(Color.WHITE);
+        ansB.setBackgroundColor(Color.WHITE);
+        ansC.setBackgroundColor(Color.WHITE);
+        ansD.setBackgroundColor(Color.WHITE);
+
+        Button clickedButton = (Button) view;
+        if(clickedButton.getId()==R.id.submit_btn){
+            if(selectedAnswer.equals(QuestionAnswer.correctAnswers[currentQuestionIndex])){
+                score++;
             }
-        }, DELAY);
+            currentQuestionIndex++;
+            loadNewQuestion();
+
+
+        }else{
+            //choices button clicked
+            selectedAnswer  = clickedButton.getText().toString();
+            clickedButton.setBackgroundColor(Color.MAGENTA);
+
+        }
+
     }
+
+    void loadNewQuestion(){
+
+        if(currentQuestionIndex == totalQuestion ){
+            finishQuiz();
+            return;
+        }
+
+        questionTextView.setText(QuestionAnswer.question[currentQuestionIndex]);
+        ansA.setText(QuestionAnswer.choices[currentQuestionIndex][0]);
+        ansB.setText(QuestionAnswer.choices[currentQuestionIndex][1]);
+        ansC.setText(QuestionAnswer.choices[currentQuestionIndex][2]);
+        ansD.setText(QuestionAnswer.choices[currentQuestionIndex][3]);
+
+    }
+
+    void finishQuiz(){
+        String passStatus = "";
+        if(score > totalQuestion*0.60){
+            passStatus = "Passed";
+        }else{
+            passStatus = "Failed";
+        }
+
+        new AlertDialog.Builder(this)
+                .setTitle(passStatus)
+                .setMessage("Score is "+ score+" out of "+ totalQuestion)
+                .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )
+                .setCancelable(false)
+                .show();
+
+
+    }
+
+    void restartQuiz(){
+        score = 0;
+        currentQuestionIndex =0;
+        loadNewQuestion();
+    }
+
 }
