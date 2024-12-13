@@ -73,7 +73,12 @@ public class Less1 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         binding = ActivityLess1Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        binding.test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Less1.this, test1.class));
+            }
+        });
         // Обработчик нажатия кнопки
         binding.backToLess2.setOnClickListener(new View.OnClickListener() {
             @Override
