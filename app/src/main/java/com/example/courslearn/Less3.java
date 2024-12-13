@@ -86,7 +86,12 @@ private ActivityLess3Binding binding;
         });
         textView = binding.textView;  // Исправлено имя переменной
         displayText();
-
+binding.test6.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(Less3.this, test3.class));
+    }
+});
         // Установка отступов для системных панелей
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

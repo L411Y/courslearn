@@ -73,7 +73,12 @@ public class Less2 extends AppCompatActivity {
         // Инициализация textView
         textView = binding.textView;  // Исправлено имя переменной
         displayText();
-
+        binding.test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( Less2.this, test2.class));
+            }
+        });
         // Установка отступов для системных панелей
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

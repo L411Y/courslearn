@@ -14,27 +14,27 @@ import android.widget.TextView;
 import com.example.courslearn.databinding.ActivityTest1Binding;
 
 
-public class test1 extends AppCompatActivity implements View.OnClickListener{
+public class test2 extends AppCompatActivity implements View.OnClickListener{
 
     public static String question[] ={
-            "Вопрос 1:  Что такое алгоритм и какова его основная цель?",
-            "Вопрос 2:  Как можно классифицировать алгоритмы?",
-            "Вопрос 3:  В каких областях не применяются алгоритмы?",
-            "Вопрос 4:  Каково значение понимания алгоритмов?"
+            "Вопрос 1: Что такое разветвляющийся алгоритм?\n",
+            "Вопрос 2: Какой блок используется в графическом представлении разветвляющегося алгоритма для обозначения условия?",
+            "Вопрос 3: Какой тип разветвляющегося алгоритма позволяет выбирать между несколькими ветвями?",
+            "Вопрос 4: Что происходит в случае простого ветвления?"
     };
 
     public static String choices[][] = {
-            {"Это четко определенная последовательность действий, предназначенная для решения конкретной задачи.\n", "Это случайная последовательность действий.", "это набор данных без инструкций", " это только математическая формула"},
-            {"На простые и сложные", "На линейные, разветвляющиеся и циклические.\n","На алгоритмы поиска и сортировки.\n","На статические и динамические.\n"},
-            {"В программировании.\n","В медицине.\n","В исскустве.\n","В финансовом секторе.\n"},
-            {"Понимание алгоритмов не имеет значения.\n","Понимание алгоритмов помогает развивать логическое мышление и умение анализировать задачи.\n","Понимание алгоритмов требуется только для математиков.\n","Понимание алгоритмов нужно только в программировании.\n"}
+            {"Алгоритм, который выполняется последовательно без условий.", "Алгоритм, который содержит хотя бы одно условие и разделяется на несколько ветвей.", "Алгоритм, который выполняет только арифметические операции.", "Алгоритм, который не может принимать решения."},
+            {"Квадрат", "Овал","Ромб","Прямоугольник"},
+            {"Простое ветвление","Множественное ветвление","Циклическое ветвление","Условное ветвление"},
+            {"Выполняется одно действие, если условие истинно, и ничего не происходит, если ложно.","Выполняется одно действие, если условие истинно, и другое — если ложно.","Выполняются все действия независимо от условий.","Условия не проверяются."}
     };
 
     public static String correctAnswers[] = {
-            "Это четко определенная последовательность действий, предназначенная для решения конкретной задачи.\n",
-            "На линейные, разветвляющиеся и циклические.\n",
-            "В исскустве.\n",
-            "Понимание алгоритмов помогает развивать логическое мышление и умение анализировать задачи.\n"
+            "Алгоритм, который содержит хотя бы одно условие и разделяется на несколько ветвей.",
+            "Ромб",
+            "Множественное ветвление",
+            "Выполняется одно действие, если условие истинно, и другое — если ложно."
     };
     TextView totalQuestionsTextView;
     TextView questionTextView;
@@ -69,7 +69,7 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
         bindF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(test1.this, Less1.class));
+                startActivity(new Intent(test2.this, Less2.class));
             }
         });
 
@@ -112,7 +112,7 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-   private void loadNewQuestion(){
+    private void loadNewQuestion(){
 
         if(currentQuestionIndex == totalQuestion ){
             finishQuiz();
@@ -124,23 +124,24 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
         ansB.setText(choices[currentQuestionIndex][1]);
         ansC.setText(choices[currentQuestionIndex][2]);
         ansD.setText(choices[currentQuestionIndex][3]);
-       Log.d("QuizApp", "Current Question: " + question[currentQuestionIndex]);
+        Log.d("QuizApp", "Current Question: " + question[currentQuestionIndex]);
     }
 
-   private void finishQuiz(){
+    private void finishQuiz(){
         String passStatus = "";
-       if(score > totalQuestion*0.60){
-           passStatus = "Успех";
-       }else{
-           passStatus = "Провал";
-       }
+        if(score > totalQuestion*0.60){
+            passStatus = "Успех";
+        }else{
+            passStatus = "Провал";
+        }
 
-       new AlertDialog.Builder(this)
-               .setTitle(passStatus)
-               .setMessage("Правильных ответов "+ score+" из "+ totalQuestion)
-               .setPositiveButton("Заново",(dialogInterface, i) -> restartQuiz() )
-               .setCancelable(false)
-               .show();
+        new AlertDialog.Builder(this)
+                .setTitle(passStatus)
+                .setMessage("Правильных ответов "+ score+" из "+ totalQuestion)
+                .setPositiveButton("Заново",(dialogInterface, i) -> restartQuiz() )
+                .setCancelable(false)
+                .show();
+
 
     }
 

@@ -11,31 +11,31 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.courslearn.databinding.ActivityTest1Binding;
 
 
-public class test1 extends AppCompatActivity implements View.OnClickListener{
+public class test4 extends AppCompatActivity implements View.OnClickListener{
 
-    public static String question[] ={
-            "Вопрос 1:  Что такое алгоритм и какова его основная цель?",
-            "Вопрос 2:  Как можно классифицировать алгоритмы?",
-            "Вопрос 3:  В каких областях не применяются алгоритмы?",
-            "Вопрос 4:  Каково значение понимания алгоритмов?"
+    public static String question[] = {
+            "Вопрос 1: Что такое массив?",
+            "Вопрос 2: Какова основная характеристика массивов?",
+            "Вопрос 3: Какой тип массива представляет собой таблицу данных?",
+            "Вопрос 4: Какое применение массивов в программировании?"
     };
 
     public static String choices[][] = {
-            {"Это четко определенная последовательность действий, предназначенная для решения конкретной задачи.\n", "Это случайная последовательность действий.", "это набор данных без инструкций", " это только математическая формула"},
-            {"На простые и сложные", "На линейные, разветвляющиеся и циклические.\n","На алгоритмы поиска и сортировки.\n","На статические и динамические.\n"},
-            {"В программировании.\n","В медицине.\n","В исскустве.\n","В финансовом секторе.\n"},
-            {"Понимание алгоритмов не имеет значения.\n","Понимание алгоритмов помогает развивать логическое мышление и умение анализировать задачи.\n","Понимание алгоритмов требуется только для математиков.\n","Понимание алгоритмов нужно только в программировании.\n"}
+            {"Структура данных, состоящая из фиксированного числа элементов одного типа.", "Набор случайных значений.", "Список функций и методов.", "Объект, который хранит данные."},
+            {"Фиксированный размер, который можно изменять в процессе выполнения программы.", "Однотипность элементов.", "Динамическое выделение памяти.", "Неопределённый размер."},
+            {"Одномерные массивы", "Ассоциативные массивы", "Многомерные массивы", "Стек"},
+            {"Хранение данных", "Создание графического интерфейса", "Обработка событий", "Работа с файлами"}
     };
 
     public static String correctAnswers[] = {
-            "Это четко определенная последовательность действий, предназначенная для решения конкретной задачи.\n",
-            "На линейные, разветвляющиеся и циклические.\n",
-            "В исскустве.\n",
-            "Понимание алгоритмов помогает развивать логическое мышление и умение анализировать задачи.\n"
+            "Структура данных, состоящая из фиксированного числа элементов одного типа.",
+            "Однотипность элементов.",
+            "Многомерные массивы",
+            "Хранение данных"
     };
+
     TextView totalQuestionsTextView;
     TextView questionTextView;
     Button bindF, ansA, ansB, ansC, ansD;
@@ -69,7 +69,11 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
         bindF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(test1.this, Less1.class));
+
+
+
+                Intent intent = new Intent(test4.this, Less4.class);
+                startActivity(intent);
             }
         });
 
@@ -112,7 +116,7 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-   private void loadNewQuestion(){
+    private void loadNewQuestion(){
 
         if(currentQuestionIndex == totalQuestion ){
             finishQuiz();
@@ -124,23 +128,24 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
         ansB.setText(choices[currentQuestionIndex][1]);
         ansC.setText(choices[currentQuestionIndex][2]);
         ansD.setText(choices[currentQuestionIndex][3]);
-       Log.d("QuizApp", "Current Question: " + question[currentQuestionIndex]);
+        Log.d("QuizApp", "Current Question: " + question[currentQuestionIndex]);
     }
 
-   private void finishQuiz(){
+    private void finishQuiz(){
         String passStatus = "";
-       if(score > totalQuestion*0.60){
-           passStatus = "Успех";
-       }else{
-           passStatus = "Провал";
-       }
+        if(score > totalQuestion*0.60){
+            passStatus = "Успех";
+        }else{
+            passStatus = "Провал";
+        }
 
-       new AlertDialog.Builder(this)
-               .setTitle(passStatus)
-               .setMessage("Правильных ответов "+ score+" из "+ totalQuestion)
-               .setPositiveButton("Заново",(dialogInterface, i) -> restartQuiz() )
-               .setCancelable(false)
-               .show();
+        new AlertDialog.Builder(this)
+                .setTitle(passStatus)
+                .setMessage("Правильных ответов "+ score+" из "+ totalQuestion)
+                .setPositiveButton("Заново",(dialogInterface, i) -> restartQuiz() )
+                .setCancelable(false)
+                .show();
+
 
     }
 

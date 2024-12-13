@@ -11,30 +11,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.courslearn.databinding.ActivityTest1Binding;
 
 
-public class test1 extends AppCompatActivity implements View.OnClickListener{
+public class test3 extends AppCompatActivity implements View.OnClickListener{
 
     public static String question[] ={
-            "Вопрос 1:  Что такое алгоритм и какова его основная цель?",
-            "Вопрос 2:  Как можно классифицировать алгоритмы?",
-            "Вопрос 3:  В каких областях не применяются алгоритмы?",
-            "Вопрос 4:  Каково значение понимания алгоритмов?"
+            "Вопрос 1: Что такое циклический алгоритм?",
+            "Вопрос 2: Какой элемент циклического алгоритма включает команды, выполняемые многократно?",
+            "Вопрос 3: Какой тип циклического алгоритма используется, когда заранее известно, сколько раз будет выполняться тело цикла?",
+            "Вопрос 4: Какой из следующих примеров является использованием циклического алгоритма?"
     };
 
     public static String choices[][] = {
-            {"Это четко определенная последовательность действий, предназначенная для решения конкретной задачи.\n", "Это случайная последовательность действий.", "это набор данных без инструкций", " это только математическая формула"},
-            {"На простые и сложные", "На линейные, разветвляющиеся и циклические.\n","На алгоритмы поиска и сортировки.\n","На статические и динамические.\n"},
-            {"В программировании.\n","В медицине.\n","В исскустве.\n","В финансовом секторе.\n"},
-            {"Понимание алгоритмов не имеет значения.\n","Понимание алгоритмов помогает развивать логическое мышление и умение анализировать задачи.\n","Понимание алгоритмов требуется только для математиков.\n","Понимание алгоритмов нужно только в программировании.\n"}
+            {"Алгоритм, который выполняется только один раз.", "Алгоритм, который повторяет действия определённое количество раз или до выполнения условия.", "Алгоритм, который не имеет условий.", "Алгоритм, который выполняет случайные действия."},
+            {"Условие завершения", "Настройка цикла","Тело цикла","Начальная переменная"},
+            {"Циклы с неявным числом повторений","Циклы с явным числом повторений","Бесконечные циклы","Условные циклы"},
+            {"Запись одной страницы в дневник.","Чтение книги по две страницы до тех пор, пока книга не закончится.","Принятие решения о том, что делать дальше.","Случайный выбор ответа на вопрос."}
     };
 
     public static String correctAnswers[] = {
-            "Это четко определенная последовательность действий, предназначенная для решения конкретной задачи.\n",
-            "На линейные, разветвляющиеся и циклические.\n",
-            "В исскустве.\n",
-            "Понимание алгоритмов помогает развивать логическое мышление и умение анализировать задачи.\n"
+            "Алгоритм, который повторяет действия определённое количество раз или до выполнения условия.",
+            "Тело цикла",
+            "Циклы с явным числом повторений",
+            "Чтение книги по две страницы до тех пор, пока книга не закончится."
     };
     TextView totalQuestionsTextView;
     TextView questionTextView;
@@ -69,7 +68,7 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
         bindF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(test1.this, Less1.class));
+                startActivity(new Intent(test3.this, Less3.class));
             }
         });
 
@@ -112,7 +111,7 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-   private void loadNewQuestion(){
+    private void loadNewQuestion(){
 
         if(currentQuestionIndex == totalQuestion ){
             finishQuiz();
@@ -124,23 +123,24 @@ public class test1 extends AppCompatActivity implements View.OnClickListener{
         ansB.setText(choices[currentQuestionIndex][1]);
         ansC.setText(choices[currentQuestionIndex][2]);
         ansD.setText(choices[currentQuestionIndex][3]);
-       Log.d("QuizApp", "Current Question: " + question[currentQuestionIndex]);
+        Log.d("QuizApp", "Current Question: " + question[currentQuestionIndex]);
     }
 
-   private void finishQuiz(){
+    private void finishQuiz(){
         String passStatus = "";
-       if(score > totalQuestion*0.60){
-           passStatus = "Успех";
-       }else{
-           passStatus = "Провал";
-       }
+        if(score > totalQuestion*0.60){
+            passStatus = "Успех";
+        }else{
+            passStatus = "Провал";
+        }
 
-       new AlertDialog.Builder(this)
-               .setTitle(passStatus)
-               .setMessage("Правильных ответов "+ score+" из "+ totalQuestion)
-               .setPositiveButton("Заново",(dialogInterface, i) -> restartQuiz() )
-               .setCancelable(false)
-               .show();
+        new AlertDialog.Builder(this)
+                .setTitle(passStatus)
+                .setMessage("Правильных ответов "+ score+" из "+ totalQuestion)
+                .setPositiveButton("Заново",(dialogInterface, i) -> restartQuiz() )
+                .setCancelable(false)
+                .show();
+
 
     }
 

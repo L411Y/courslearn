@@ -74,7 +74,12 @@ public class Less4 extends AppCompatActivity {
         binding = ActivityLess4Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        binding.test7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Less4.this,test4.class));
+            }
+        });
         binding.backToLess5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
